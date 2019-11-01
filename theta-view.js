@@ -9,13 +9,6 @@ function webcaminit(video_id) {
     video: { mandatory:{ minWidth: 1280 } },
     audio: true
   }
-
-  peer.addEventListener("addstream", onRemoteStreamAdded, false);
-  function onRemoteStreamAdded(event) {
-    console.log("Added remote stream");
-    video.srcObject = event.stream;
-  }
-
   // 1st try FullHD
   navigator.getUserMedia(option,
     function(stream) { // for success case
