@@ -7,7 +7,6 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
         // Success
         $('#my-video').get(0).srcObject = stream;
         localStream = stream;
-        theta_view($('#my-video').get(0));
     }).catch(function (error) {
         // Error
         console.error('mediaDevice.getUserMedia() error:', error);
@@ -114,7 +113,7 @@ var theta_view = function (video) {
 
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize( width, height );
-	var element = renderer.domElement;
+	var element = rendereer.domElement;
 	document.body.appendChild( element );
 
 	var directionalLight = new THREE.DirectionalLight( 0xffffff );
